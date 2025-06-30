@@ -38,8 +38,9 @@ A full-stack personal finance tracker app built with React, Node.js, Express, an
        ```
        npm run dev
        ```
+
     
- 5. Install frontend dependencies and start React app
+5. Install frontend dependencies and start React app
       ```
      cd ..
      npm install
