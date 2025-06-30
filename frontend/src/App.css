@@ -1,0 +1,484 @@
+/* === Global Styles === */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #0f0f10;
+  color: #ddd;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* === Container & Layout === */
+main {
+  max-width: 480px;
+  margin: 40px auto 60px auto;
+  padding: 20px 25px 30px;
+  background-color: #1e1e26;
+  border-radius: 12px;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    inset 0 0 15px #00000055;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  
+}
+
+/* === Headings === */
+h1 {
+  font-weight: 800;
+  font-size: 3rem;
+  text-align: center;
+  color: #00d084;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+}
+
+h1 span {
+  color: #aaa;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #ccc;
+  user-select: none;
+}
+
+/* === Summary === */
+.summary {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.5rem;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #22272b, #1a1e22);
+  border-radius: 14px;
+  box-shadow:
+    0 0 15px #111a1d,
+    inset 0 0 10px #1f272b;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #eee;
+}
+
+.summary .income {
+  color: #00c77f;
+  margin-right: 10px;
+}
+
+.summary .expense {
+  color: #e05c5c;
+}
+
+/* === Filter === */
+.filter {
+  max-width: 480px;
+  margin: 0 auto 20px auto;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ddd;
+  font-weight: 600;
+  user-select: none;
+}
+
+.filter label {
+  white-space: nowrap;
+}
+
+.filter select {
+  padding: 6px 14px;
+  border-radius: 10px;
+  border: none;
+  background-color: #545454;
+  color: #f1f1f1;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter select:hover,
+.filter select:focus {
+  background-color: #3b3c47;
+  outline: none;
+}
+
+/* === Dashboard Filter (Multiselect + Dates + Checkbox) === */
+.dashboard-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-filter > * {
+  flex: 1 1 130px;
+}
+
+.dashboard-filter input[type="date"] {
+  appearance: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #545454;
+  color: #f1f1f1;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-filter input[type="date"]:focus {
+  outline: none;
+  background-color: #3b3c47;
+  box-shadow: 0 0 5px 2px rgba(0, 208, 132, 0.3);
+}
+
+.dashboard-filter .checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+/* === React Select Styling === */
+.react-select-container {
+  flex: 2 1 200px;
+}
+.react-select__control {
+  background: #545454;
+  border: none;
+  border-radius: 8px;
+}
+.react-select__control--is-focused {
+  box-shadow: 0 0 5px 2px #00d084aa;
+}
+.react-select__multi-value {
+  background: #00d08433;
+}
+.react-select__multi-value__label {
+  color: #fff;
+}
+.react-select__menu {
+  background: #2c2d38;
+}
+
+/* === Form Styles === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 15px;
+}
+
+form .basic {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+form input,
+form select {
+  flex: 1;
+  min-width: 120px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: none;
+  background-color: #545454;
+  color: #f1f1f1;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: text;
+}
+
+form input:focus,
+form select:focus {
+  outline: none;
+  background-color: #3b3c47;
+  box-shadow: 0 0 5px 2px #00d084aa;
+}
+
+form input[type="datetime-local"] {
+  color: #bbb;
+}
+
+form .description input {
+  width: 100%;
+}
+
+form button {
+  padding: 14px 0;
+  background: linear-gradient(45deg, #00d084, #00b367);
+  border-radius: 16px;
+  border: none;
+  color: #111;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgb(0 208 132 / 0.5);
+}
+
+form button:hover:not(:disabled),
+form button:focus:not(:disabled) {
+  transform: scale(1.05);
+  outline: none;
+  box-shadow: 0 6px 20px rgb(0 208 132 / 0.7);
+}
+
+form button:disabled {
+  background-color: #008054;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* === Transaction Styles === */
+.transaction {
+  margin-top: 20px;
+  padding: 20px 18px 18px;
+  background-color: #2c2d38;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  transition: box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.transaction:hover {
+  box-shadow:
+    0 0 15px 3px #00d084aa,
+    0 8px 20px rgba(0,0,0,0.3),
+    inset 0 0 15px #005632aa;
+  background-color: #26392c;
+}
+
+.transaction .left {
+  flex: 1 1 60%;
+  min-width: 180px;
+}
+
+.transaction .name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #f1f1f1;
+  word-break: break-word;
+}
+
+.transaction .description {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 6px;
+  word-break: break-word;
+}
+
+.transaction .category {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #00d084;
+  user-select: none;
+}
+
+.transaction .right {
+  flex: 1 1 35%;
+  min-width: 140px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.transaction .price {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #fff;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+.transaction .price.green {
+  color: #00d084;
+}
+
+.transaction .price.red {
+  color: #c11;
+}
+
+.transaction .datetime {
+  font-size: 0.75rem;
+  color: #ccc;
+  user-select: none;
+  font-family: monospace;
+}
+
+/* Action buttons */
+.transaction .actions {
+  display: flex;
+  gap: 10px;
+}
+
+.transaction button.edit-btn,
+.transaction button.delete-btn {
+  background-color: transparent;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: #ccc;
+  user-select: none;
+}
+
+.transaction button.edit-btn:hover {
+  background-color: #004d40;
+  color: #00d084;
+}
+
+.transaction button.delete-btn:hover {
+  background-color: #330000;
+  color: #ff4d4d;
+}
+
+/* === Navigation === */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 16px 0;
+  background: #1e1e26;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.nav a:hover {
+  background-color: #00d084dd;
+  color: #0f0f0f;
+}
+
+/* === Chart Containers === */
+.chart-container {
+  margin-top: 3rem;
+  padding: 20px 25px;
+  background: linear-gradient(145deg, #26292f, #1a1c20);
+  border-radius: 20px;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.6),
+    inset 0 0 35px #111418;
+  user-select: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-container:hover {
+  transform: scale(1.04);
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.8),
+    inset 0 0 50px #111418;
+}
+
+canvas {
+  max-width: 100% !important;
+  border-radius: 16px;
+  background-color: #1f2227;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* === Export Buttons === */
+.report-buttons {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.report-buttons button {
+  padding: 10px 18px;
+  background-color: #00d084;
+  color: #0f0f0f;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.report-buttons button:hover {
+  background-color: #00a36c;
+  transform: scale(1.05);
+}
+
+/* === Responsive === */
+@media (max-width: 480px) {
+  main {
+    margin: 20px 10px 50px;
+    padding: 15px 18px;
+  }
+
+  form .basic {
+    flex-direction: column;
+  }
+
+  .transaction {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .transaction .right {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dashboard-filter {
+    flex-direction: column;
+  }
+}
+
+/* === Scrollbar Styling (Optional) === */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #008053cc;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00633acc;
+}
