@@ -8,13 +8,12 @@ A full-stack personal finance tracker app built with React, Node.js, Express, an
 - Filter transactions by category and date range
 - Interactive charts to visualize expenses by category, income vs expenses, and cumulative balance
 - Export reports as PDF or CSV
-- User authentication with Google OAuth (optional integration)
 
+  
 ## Tech Stack
 
 - Frontend: React, React Router, react-select, Chart.js
 - Backend: Node.js, Express, MongoDB, Mongoose
-- Authentication: Google OAuth 2.0 (via Google Auth Library)
 - Export: jsPDF and html2canvas
 
 ## Getting Started
@@ -30,20 +29,20 @@ A full-stack personal finance tracker app built with React, Node.js, Express, an
     ```
 
 3.
-  ```
-  MONGO_URL=your_mongodb_connection_string
-  PORT=4000
-  ````
+     ```
+     MONGO_URL=your_mongodb_connection_string
+     PORT=4000
+     ````
   
-  4.Start the backend server
-    ```
-    npm run dev
-    ```
+4.Start the backend server
+       ```
+       npm run dev
+       ```
     
  5. Install frontend dependencies and start React app
-   ```
-  cd ..
-  npm install
-  npm start
-  ```   
+      ```
+     cd ..
+     npm install
+     npm start
+     ```   
     
